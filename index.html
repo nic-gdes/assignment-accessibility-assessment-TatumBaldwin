@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
 
@@ -14,10 +14,13 @@
   </head>
 
   <body>
+
+    <!-- header -->
     <div class="header">
       <h1 size="7">Welcome to our wildlife website</h1>
     </div>
 
+    <!-- naviagtion -->
     <nav class="nav">
       <ul>
         <li><a href="#">Home</a></li>
@@ -27,11 +30,14 @@
       </ul>
 
       <form class="search">
-        <input type="search" name="q" placeholder="Search query">
-        <input type="submit" value="Go!">
+        <label style="margin: 10px;">Search
+        <input type="search" type="text" name="search" placeholder="Search query"></label>
+        <input type="submit" value="Search">
       </form>
     </nav>
 
+
+    <!-- article -->
     <main>
       <article>
         <h2 size="6">The trouble with Bears</h2>
@@ -46,20 +52,21 @@
       
         Bears can also be classified in terms of their habitat — both large and medium bears are just as at home in urban areas as they are in the countryside. Different habitats encourange different behaviour however, as you'll find out below. The below table also gives you some useful facts about bears.</p>
       
+        <!-- table -->
         <table>
           <thead>
             <tr>
-              <td>Bear Type</td>
-              <td>Coat</td>
-              <td>Adult size</td>
-              <td>Habitat</td>
-              <td>Lifespan</td>
-              <td>Diet</td>
+              <th>Bear Type</th>
+              <th>Coat</th>
+              <th>Adult size</th>
+              <th>Habitat</th>
+              <th>Lifespan</th>
+              <th>Diet</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Wild</td>
+              <th>Wild</th>
               <td>Brown or black</td>
               <td>1.4 to 2.8 meters</td>
               <td>Woods and forests</td>
@@ -67,7 +74,7 @@
               <td>Fish, meat, plants</td>
             </tr>
             <tr>
-              <td>Urban</td>
+              <th>Urban</th>
               <td>North Face</td>
               <td>18 to 22</td>
               <td>Condos and coffee shops</td>
@@ -80,13 +87,14 @@
         <h3 size="5">Habitats and Eating habits</h3>
         <p>Wild bears eat a variety of meat, fish, fruit, nuts, and other natually growing ingredients. In general they will hunt for food themselves in woodland or rivers, but at a push they will track down their sustenance from farms or country houses. They tend to live in relative isolation, in caves, tents, or cottages.</p>
 
+        <!-- images -->
         <figure>
-          <img src="media/wild-bear.jpg">
+          <img alt="a light coated urban bear standing in a river" src="media/wild-bear.jpg">
           <figcaption>Urban (gentrified) bears on the other hand have largely abandoned the old ways. They will hunt other urban creatures if necessary (including other predators like rats and foxes), but prefer to scavenge from readily available urban food outlets like dumpsters, bins, and fast food joints. When food has proven scarce, urban bears have even been known to break into people's kitchens and steal essentials like baked beans, ready meals, and microwave ovens.</figcaption>
         </figure>
 
         <figure>
-          <img src="media/urban-bear.jpg">
+          <img alt="black and white photo of a urban bear in the city" src="media/urban-bear.jpg">
           <figcaption>Urban bears will sleep anywhere they can, from bus shelters and parks, to the toilets in McDonalds, to their own apartment.</figcaption>
         </figure>
         
@@ -96,6 +104,8 @@
         
         The following audio clip contains a fact file providing more details about bear mating rituals, along with samples and quotes from experts.
         
+
+        <!-- audio -->
         <audio controls>
           <source src="./media/bear.mp3" type="audio/mpeg" />
           <source src="./media/bear.ogg" type="audio/ogg" />
@@ -106,45 +116,32 @@
         </audio>
 
 
-        <aside>
-
-          <h3 size="5">About the author</h3>
-
-         <p> Evan Wild is an unemployed plumber from Doncaster, who has been really "in to" wildlife since childhood. He once went to Chester Zoo on holiday, but got ill after eating a doner kebab.</p>
-
-         <p>He has never seen a bear, but once read a Daily Mail article about them, and thinks they sound cool.</p> 
-
-        </aside>
-
-
+        <!-- Comments form show/hide -->
         <section class="comments">
           <button class="show-hide">Show comments</button>
 
           <div class="comment-wrapper">
 
-            <h2 size="6">Add comment</h2>
+            <h3 size="5">Add comment</h3>
 
             <form class="comment-form">
-              <div class="flex-pair">
-                Your name:
-                <input type="text" name="name" id="name" placeholder="Enter your name">
-              </div>
-              <div class="flex-pair">
-                Your comment:
-                <input type="text" name="comment" id="comment" placeholder="Enter your comment">
-              </div>
+              <label class="flex-pair" for="name">Your Name:</label>
+              <input  type="text" id="name" name="user_name">
+              <form action="/html/tags/html_form_tag_action.cfm" method="post">
               <div>
-                <input type="submit" value="Submit comment">
+                <label class="flex-pair" for="comments">Your Comment:</label>
+                <input type="text" name="comments" id="comments">
               </div>
+              <input style="margin: 10px;" type="submit" value="Submit">
             </form>
 
-            <h2 size="6">Comments</h2>
+            <h3 size="5">Comments</h3>
 
             <ul class="comment-container">
 
               <li>
 
-                <p>Bob Fossil</p>
+                <h4 style="margin-right: 10px;">Bob Fossil</h4>
 
                 <p>Oh I am so glad you taught me all about the big brown angry guys in the woods. With their sniffing little noses and their bad attitudes, they can sure be a menace — I was thinking of putting them all in a truck and driving them outta here. I run a zoo, you know.</p>
 
@@ -156,7 +153,20 @@
         </section>
       </article>
 
+      <!-- aside link holder and author about-->
       <div class="secondary">
+
+        <aside>
+
+          <h2 size="6">About the author</h2>
+
+         <p> Evan Wild is an unemployed plumber from Doncaster, who has been really "in to" wildlife since childhood. He once went to Chester Zoo on holiday, but got ill after eating a doner kebab.</p>
+
+         <p>He has never seen a bear, but once read a Daily Mail article about them, and thinks they sound cool.</p> 
+
+        </aside>
+
+
         <h2 size="6">Related</h2>
 
         <ul>
@@ -166,9 +176,14 @@
           <li><a href="#">The trouble with Octopi</a></li>
           <li><a href="#">The trouble with Lemurs</a></li>
         </ul>
+
+        
       </div>
+
+      
     </main>
 
+    <!-- footer -->
     <footer>
       <p>©Copyright 2050 by nobody. All rights reversed.</p>
     </footer>
