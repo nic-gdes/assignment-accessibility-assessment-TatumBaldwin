@@ -29,8 +29,7 @@
       </ul>
 
       <form class="search">
-        <label style="margin: 10px;">Search
-        <input type="search" type="text" name="search" placeholder="Search query"></label>
+        <input type="search" type="text" name="search" placeholder="Search query" aria-label="search"> <!-- Since we don't necessarily want to show a "Search" label for this input, we can instead use the aria-label attribute to label it and remove the <label> element -->
         <input type="submit" value="Search">
       </form>
     </nav>
