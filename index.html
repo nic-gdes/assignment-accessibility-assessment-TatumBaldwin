@@ -16,57 +16,57 @@
   <body>
 
     <!-- header -->
-    <div tabindex="1" class="header">
+    <header class="header"> <!-- This could be a <header> tag, which is more semantic, you also will want to wrap all of your header items within it, including the header navigation -->
       <h1 size="7">Welcome to our wildlife website</h1>
-    </div>
 
     <!-- naviagtion -->
     <nav class="nav">
       <ul>
-        <li><a aria-current tabindex="2" href="#">Home</a></li>
-        <li><a tabindex="3" href="#">Our team</a></li>
-        <li><a tabindex="4" href="#">Projects</a></li>
-        <li><a tabindex="5" href="#">Blog</a></li>
+        <li><a aria-current href="#">Home</a></li>
+        <li><a href="#">Our team</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Blog</a></li>
       </ul>
 
       <form class="search">
-        <label style="margin: 10px;">Search
-        <input tabindex="6" type="search" type="text" name="search" placeholder="Search query"></label>
-        <input tabindex="7" type="submit" value="Search">
+        <input type="search" type="text" name="search" placeholder="Search query" aria-label="search"> <!-- Since we don't necessarily want to show a "Search" label for this input, we can instead use the aria-label attribute to label it and remove the <label> element -->
+        <input type="submit" value="Search">
       </form>
     </nav>
+  </header>
 
 
     <!-- article -->
     <main>
       <article>
-        <h2 tabindex="8" size="6">The trouble with Bears</h2>
+        <h2 size="6">The trouble with Bears</h2>
         
-        <p tabindex="9">By Evan Wild
+        <p>By Evan Wild
         Tall, lumbering, angry, dangerous. The real live bears of this world are proud, independent creatures, self-serving and always on the hunt for food. Nothing like the bears you see on TV, like Baloo from renowned documentary, The Jungle Book.
         So what are bears really like, and why does the world's media portray them with such a skewed vision? In this article we try to answer those questions, and give you a real insight into the life of the bear.</p>
 
-        <h3 tabindex="10" size="5">Types of bear</h3>
+        <h3 size="5">Types of bear</h3>
         
-       <p tabindex="11"> Bears come in two varieties — large and medium. You don't get small bears. If you have seen a small bear, then it was in fact probably a baby bear (cub) from another species.
+       <p> Bears come in two varieties — large and medium. You don't get small bears. If you have seen a small bear, then it was in fact probably a baby bear (cub) from another species.
       
         Bears can also be classified in terms of their habitat — both large and medium bears are just as at home in urban areas as they are in the countryside. Different habitats encourange different behaviour however, as you'll find out below. The below table also gives you some useful facts about bears.</p>
       
         <!-- table -->
-        <table tabindex="12">
+        <table>
+          <caption>Types of Bears</caption>
           <thead>
             <tr>
-              <th>Bear Type</th>
-              <th>Coat</th>
-              <th>Adult size</th>
-              <th>Habitat</th>
-              <th>Lifespan</th>
-              <th>Diet</th>
+              <th scope="col">Bear Type</th>
+              <th scope="col">Coat</th>
+              <th scope="col">Adult size</th>
+              <th scope="col">Habitat</th>
+              <th scope="col">Lifespan</th>
+              <th scope="col">Diet</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th>Wild</th>
+              <th scope="row">Wild</th>
               <td>Brown or black</td>
               <td>1.4 to 2.8 meters</td>
               <td>Woods and forests</td>
@@ -74,7 +74,7 @@
               <td>Fish, meat, plants</td>
             </tr>
             <tr>
-              <th>Urban</th>
+              <th scope="row">Urban</th>
               <td>North Face</td>
               <td>18 to 22</td>
               <td>Condos and coffee shops</td>
@@ -83,30 +83,31 @@
             </tr>
           </tbody>
         </table>
+        <!-- to make your table more accessible, you can add scope="" attributes showing which items are meant as headers for columns, and which are meant as headers for rows: https://www.w3.org/WAI/tutorials/tables/ -->
 
-        <h3 tabindex="13" size="5">Habitats and Eating habits</h3>
-        <p tabindex="14">Wild bears eat a variety of meat, fish, fruit, nuts, and other natually growing ingredients. In general they will hunt for food themselves in woodland or rivers, but at a push they will track down their sustenance from farms or country houses. They tend to live in relative isolation, in caves, tents, or cottages.</p>
+        <h3 size="5">Habitats and Eating habits</h3>
+        <p>Wild bears eat a variety of meat, fish, fruit, nuts, and other natually growing ingredients. In general they will hunt for food themselves in woodland or rivers, but at a push they will track down their sustenance from farms or country houses. They tend to live in relative isolation, in caves, tents, or cottages.</p>
 
         <!-- images -->
-        <figure tabindex="15">
+        <figure>
           <img alt="a light coated urban bear standing in a river" src="media/wild-bear.jpg">
           <figcaption>Urban (gentrified) bears on the other hand have largely abandoned the old ways. They will hunt other urban creatures if necessary (including other predators like rats and foxes), but prefer to scavenge from readily available urban food outlets like dumpsters, bins, and fast food joints. When food has proven scarce, urban bears have even been known to break into people's kitchens and steal essentials like baked beans, ready meals, and microwave ovens.</figcaption>
         </figure>
 
-        <figure tabindex="16">
+        <figure>
           <img alt="black and white photo of a urban bear in the city" src="media/urban-bear.jpg">
           <figcaption>Urban bears will sleep anywhere they can, from bus shelters and parks, to the toilets in McDonalds, to their own apartment.</figcaption>
         </figure>
         
-        <h3 tabindex="17" size="5">Mating rituals</h3>
+        <h3 size="5">Mating rituals</h3>
         
-        <p tabindex="18">>Bears are romantic creatures by nature, and will naturally look for a mate that they can spend the rest of their lives with. They will woo a potential suitor by making their dwelling look attractive — for example with cave paintings or a bed of reeds in the case of a wild bear, and mood lighting and a Michael Bublé CD in the case of an urban bear.
+        <p>Bears are romantic creatures by nature, and will naturally look for a mate that they can spend the rest of their lives with. They will woo a potential suitor by making their dwelling look attractive — for example with cave paintings or a bed of reeds in the case of a wild bear, and mood lighting and a Michael Bublé CD in the case of an urban bear.</p>
         
-        The following audio clip contains a fact file providing more details about bear mating rituals, along with samples and quotes from experts.</p>
+        <p>The following audio clip contains a fact file providing more details about bear mating rituals, along with samples and quotes from experts.</p>
         
 
         <!-- audio -->
-        <audio controls tabindex="19">
+        <audio controls>
           <source src="./media/bear.mp3" type="audio/mpeg" />
           <source src="./media/bear.ogg" type="audio/ogg" />
           
@@ -114,31 +115,32 @@
             This isn't really an audio fact file about bears, but it is an audio file that you can transcribe.
           </p>
         </audio>
+        <!-- You will want to add something to indicate a transcription for this audio track. You can add the transcription directly to the page (and saying it's a transcription), or you can link it to a page that has the transcription. As long as the user has a place to find the transcription -->
 
 
         <!-- Comments form show/hide -->
         <section class="comments">
-          <button tabindex="20" class="show-hide">Show comments</button>
+          <button class="show-hide">Show comments</button>
 
           <div class="comment-wrapper">
 
             <h3 size="5">Add comment</h3>
 
             <form class="comment-form">
-              <label tabindex="21" class="flex-pair" for="name">Your Name:</label>
-              <input tabindex="22"  type="text" id="name" name="user_name">
+              <label class="flex-pair" for="name">Your Name:</label>
+              <input  type="text" id="name" name="user_name">
               <div action="/html/tags/html_form_tag_action.cfm" method="post">
               <div>
-                <label tabindex="23" class="flex-pair" for="comment">Your Comment:</label>
-                <input tabindex="24" type="text" name="comment" id="comment">
+                <label class="flex-pair" for="comment">Your Comment:</label>
+                <input type="text" name="comment" id="comment">
               </div>
 
-              <input tabindex="25" style="margin: 10px;" type="submit" value="submit">
+              <input style="margin: 10px;" type="submit" value="submit">
             </form>
 
-            <h3 tabindex="26" size="5">Comments</h3>
+            <h3 size="5">Comments</h3>
 
-            <ul tabindex="27" class="comment-container">
+            <ul class="comment-container">
 
               <li>
 
@@ -155,7 +157,7 @@
       </article>
 
       <!-- aside link holder and author about-->
-      <div tabindex="28" class="secondary">
+      <div class="secondary">
 
         <aside>
 
@@ -168,15 +170,18 @@
         </aside>
 
 
-        <h2 tabindex="29" size="6">Related</h2>
+        <h2 size="6">Related</h2>
 
-        <ul>
-          <li><a tabindex="30" href="#">The trouble with Bees</a></li>
-          <li><a tabindex="31" href="#">The trouble with Otters</a></li>
-          <li><a tabindex="32" href="#">The trouble with Penguins</a></li>
-          <li><a tabindex="33" href="#">The trouble with Octopi</a></li>
-          <li><a tabindex="34" href="#">The trouble with Lemurs</a></li>
-        </ul>
+        <nav>
+          <ul>
+            <li><a href="#">The trouble with Bees</a></li>
+            <li><a href="#">The trouble with Otters</a></li>
+            <li><a href="#">The trouble with Penguins</a></li>
+            <li><a href="#">The trouble with Octopi</a></li>
+            <li><a href="#">The trouble with Lemurs</a></li>
+          </ul>
+        </nav>
+        <!-- Adding a <nav> here shows the user that this is specifically a list of nagivational links -->
 
         
       </div>
@@ -185,7 +190,7 @@
     </main>
 
     <!-- footer -->
-    <footer tabindex="35">
+    <footer>
       <p>©Copyright 2050 by nobody. All rights reversed.</p>
     </footer>
 
@@ -193,3 +198,7 @@
 
   </body>
 </html>
+
+<!-- Additional Comments -->
+<!-- tabindex="" is only necessary if you're wanting to be able to tab to something that can't normally be tabbed to. You don't need it for headers, text, etc unless you are going to have some sort of interaction with it (other than reading) -->
+<!-- The size="" attribute isn't really necessary for any Accessibility reasons, it's purely visual, so you can style with CSS instead. -->
